@@ -11,7 +11,8 @@ program
   .description('Start the broadcast server')
   .option('-p, --port <number>', 'Port to run the server on', '8080')
   .action((options) => {
-    console.log(options);
+    const { startServer } = require('./server');
+    startServer(options.port);
   });
 
 program
