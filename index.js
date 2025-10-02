@@ -21,7 +21,8 @@ program
   .option('-h, --host <string>', 'Server host', 'localhost')
   .option('-p, --port <number>', 'Server port', '8080')
   .action((options) => {
-    console.log(options);
+    const { startClient } = require('./client');
+    startClient(options.host, options.port);
   });
 
 program.parse(process.argv);
